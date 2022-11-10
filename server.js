@@ -30,7 +30,7 @@ fastify.register(require("@fastify/view"), {
 });
 
 // Load and parse SEO data
-const seo = require("./src/seo.json");
+const  seo = require("./src/seo.json");
 if (seo.url === "glitch-default") {
   seo.url = `https://${process.env.PROJECT_DOMAIN}.glitch.me`;
 }
@@ -91,7 +91,7 @@ fastify.post("/", function (request, reply) {
   }
 
   // The Handlebars template will use the parameter values to update the page with the chosen color
-  return reply.view("/src/pages/index.hbs", params);
+  return reply.view("index.html", params);
 });
 
 // Run the server and report out to the logs
