@@ -8,7 +8,7 @@ const path = require("path");
 // Require the fastify framework and instantiate it
 const fastify = require("fastify")({
   // Set this to true for detailed logging:
-  logger: true,
+  logger: false,
 });
 
 
@@ -38,12 +38,11 @@ function (request, reply) {
   return reply.view("index.html");
 });
 
-function Colors(){
 fastify.post("/",
 function (request, reply) {
 
 return reply.view("colors.html");
-});}
+});
 
 // Run the server and report out to the logs
 fastify.listen(
